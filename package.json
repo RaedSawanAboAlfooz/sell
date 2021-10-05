@@ -1,0 +1,44 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "node ./index.js",
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "ISC",
+    "devDependencies": {
+        "axios": "^0.21",
+        "bootstrap": "^4.6.0",
+        "jquery": "^3.6",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "popper.js": "^1.16.1",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
+        "vue": "^2.6.12",
+        "vue-loader": "^15.9.5",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "http": "0.0.1-security",
+        "ioredis": "^4.27.7",
+        "mongoose": "^5.13.5",
+        "mysql": "^2.18.1",
+        "nodemon": "^2.0.12",
+        "socket.io": "^2.3.0"
+    },
+    "engines": {
+        "node": "10.x"
+    }
+}
