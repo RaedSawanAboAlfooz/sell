@@ -79,7 +79,7 @@
         <h2>imags</h2>
     </div>
 @foreach ($item->imags as $image )
-<img class="container col " src="{{asset('assets/images/products/'.$image ->image_name)}}" alt="" height='200px'  >
+<img class="container col " src="{{asset('assets/images/products/'.$image ->image_name)}}" alt="{{asset('assets/images/products/'.$image ->image_name)}}" height='200px'  >
 @endforeach
 </div>
 @endforeach
