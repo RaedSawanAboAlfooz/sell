@@ -35,20 +35,14 @@ return [
             'root' => storage_path('app'),
         ],
 
-        // 'public' => [
-        //     'driver' => 'local',
-        //     'root' => storage_path('app/public'),
-        //     'url' => env('APP_URL').'/storage',
-        //     'visibility' => 'public',
-        // ],
-
-
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'), /* app/storage/app/public */
-            'url' => env('PUBLIC_STORAGE_URL'), /* http://myApp.herokuapp.com/public/storage */
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+
+
 
         's3' => [
             'driver' => 's3',
