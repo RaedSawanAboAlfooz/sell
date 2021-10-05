@@ -99,9 +99,9 @@ public function productFromCategory (Request $request )
         if ($request->hasFile("file")!=null ) {
             $name = $request->file('file')->getClientOriginalName();
             $newNameImage =time() . '_' . $name;
-            $request->file('file')->move(public_path() .'\assets\images\products', $newNameImage);
+            $request->file('file')->move(public_path('\assets\images\products'), $newNameImage);
             $imag =new Image;
-            $imag->url_image=public_path() ."\assets\images\products\\".$newNameImage;
+            $imag->url_image=public_path('\assets\images\products').$newNameImage;
             $imag->product_id=intval($request->get('product_id'));
             $imag->image_name=$newNameImage;
             $imag->save();
@@ -135,7 +135,7 @@ public function productFromCategory (Request $request )
             $string=$request -> get('images_name');
             $names =explode('"',$string);
             foreach($names as $name){
-                File::delete(public_path().'/assets/images/products/'.$name);
+                File::delete(public_path('/assets/images/products/').$name);
             }
             return response()->json(['mssage'=>'ok']);
         } else {
