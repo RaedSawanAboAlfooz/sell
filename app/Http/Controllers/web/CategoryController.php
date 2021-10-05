@@ -36,7 +36,7 @@ class CategoryController extends Controller
             $name = $request->file('url_image')->getClientOriginalName();
             $newNameImage =time() . '_' . $name;
             // $request->file('url_image')->move(public_path() .'\assets\images\Category', $newNameImage);
-            $path =public_path('/);
+            $path =public_path('/');
             $request->file('url_image')->move($path, $newNameImage);
         }
         Category::create([
