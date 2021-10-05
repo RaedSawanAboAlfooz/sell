@@ -36,7 +36,7 @@ class CategoryController extends Controller
             $name = $request->file('url_image')->getClientOriginalName();
             $newNameImage =time() . '_' . $name;
             // $request->file('url_image')->move(public_path() .'\assets\images\Category', $newNameImage);
-            $path =public_path('/');
+            $path =public_path('/assets/images/Category');
             $request->file('url_image')->move($path, $newNameImage);
         }
         Category::create([
@@ -80,7 +80,7 @@ class CategoryController extends Controller
             File::delete($category->getAttribute('url_image'));
             $name = $request->file('url_image')->getClientOriginalName();
             $newNameImage =time() . '_' . $name;
-            $request->file('url_image')->move(public_path() .'\assets\images\Category', $newNameImage);
+            $request->file('url_image')->move(public_path('\assets\images\Category'), $newNameImage);
             $category->update([
                 'name'=>$request->get('name'),
                 'url_image'=>public_path() ."\assets\images\Category\\".$newNameImage,
