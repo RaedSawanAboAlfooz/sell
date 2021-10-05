@@ -16,7 +16,7 @@ class EditProfileController extends Controller
     }else{
         $name = $request->file('file')->getClientOriginalName();
         $newNameImage =time() . '_' . $name;
-        $request->file('file')->move(public_path() .'\assets\images\users', $newNameImage);
+        $request->file('file')->move(public_path('/assets/images/users'), $newNameImage);
         $user =User::find  ( $request -> get('user_id'));
         $oldImageName=$user->image_profile_name;
 
@@ -37,7 +37,7 @@ class EditProfileController extends Controller
                 $user ->image_profile_name=$newNameImage;
                 $user->save();
                     if ($oldImageName!='assets/imags/profile.png'&&$user->image_profile_id!=0 ) {
-                        File::delete(public_path() . '/assets/images/users/' . $oldImageName);
+                        File::delete(public_path('/assets/images/users/')  . $oldImageName);
                     }
                return response($imageUser,200);
             }
