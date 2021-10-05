@@ -39,7 +39,7 @@ return [
             'driver' => 'local',
             'root' => storage_path(env('ROOT'),),
             'url' => env('URL'),
-            'visibility' => 'public',
+            'visibility' => env('V'),
         ],
 
 
